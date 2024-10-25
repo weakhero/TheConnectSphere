@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect Sphere</title>
+  <link rel="icon" href="./images/logoofweb.png" type="image/png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="css/incorectpassword.css">
+</head>
+<body>
+  <div class="blur-background"></div>
+
+  <!-- Login Form -->
+  <form id="loginForm" class="form-container">
+    <div class="wrapper">
+      <img class="logo" src="./images/Sclogos.png" alt="">
+      <div class="input-box">
+        <input type="text" id="username" placeholder="Enter Username" required>
+        <i class='bx bx-user'></i>
+        <div id="errorMessage" style="display: none; color: red;">Incorrect Credentials</div>
+      </div>
+      <div class="input-box">
+        <input type="password" id="password" placeholder="Enter password" required>
+        <i class='bx bx-key'></i>
+        <div id="errorPassword" style="display: none; color: red;">Incorrect Credentials</div>
+      </div>
+      <div class="remember-forgot">
+        <label class="custom-checkbox">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+          Remember Me
+        </label>
+        <a href="RetrieveAcc.html"> Forgot Password?</a>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div class="register-link">
+        <p>Register? <a href="Register.html"> Click me</a></p>
+        <a href="Dev.html"><img src="./images/coding (1).png" width="25" height="25"></a>
+      </div>
+    </div>
+  </form>
+
+  <div id="videoContainer" class="hidden">
+    <video id="fullscreenVideo" autoplay muted loop>
+        <source src="./images/gonjiam.mp4" type="video/mp4">
+    </video>
+    <h1>"Oops you got the wrong Credentials"</h1>
+</div>
+
+  <script src="./js/Validity.js"></script>
+
+
+
+</body>
+</html>

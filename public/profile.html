@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="./css/profile2.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="header.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="./js/profile.js" defer></script>
+</head>
+<body> 
+    <div class="container">
+    <div class="header">
+        <div class="nav">
+            <a href="#"><i id="icon" class='bx bxs-user'></i></a>
+            <a href=""><i id="icons" class='bx bxs-plus-circle'></i></a>
+            <a href="Timeline.html" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Search</a>
+            <a href="#" class="nav-link">Message</a>
+                <div class="dropdown">
+                    <img id="setting" src="./images/settings.png" alt="">
+                    <div class="dropdown-content">
+
+                    <h1 class="dropsettings">Settings</h1>
+
+                    <div class="dropsettingscontainer">
+                        <input type="text" class="search-input" placeholder="🔍 Search...">
+                        <h2>Preferences</h2>
+                        <p>Costumize your experience on Connect Sphere</p>
+                    <div class="settingdevider">
+                        <img class="img" src="./images/accesibility.png" alt="">
+                        <h4>Accesibility</h4>
+                    </div>
+                    <div class="settingdevider">
+                        <img class="img" src="./images/travel.png" alt="">
+                        <h4>Language and Region</h4>
+                    </div>
+                    <div class="settingdevider">
+                        <img class="img" src="./images/user-interface.png" alt="">
+                        <h4>Darkmode</h4>
+                        </div>
+                        <h2>Your Activity</h2>
+                        <p>Review your activity  on Connect Sphere</p>
+                        <div class="settingdevider">
+                        <img class="img" src="./images/activity.png" alt="">
+                        <h4>Activity</h4>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        
+            <a href="./profile.html"><img id="back" src="./images/back.png" alt=""></a>
+        </div>
+    </div>
+</div>
+
+ 
+    <div class="first_Background">
+        <div class="backgroundphoto-container">
+            <img id="BGP" src="" alt="Background Photo">
+            <input type="file" id="backgroundphotoInput" accept="image/*">
+        </div>
+        <div class="profile-container">
+            <img id="preview" src="" alt="Profile Picture">
+            <input type="file" id="profilePictureInput" accept="image/*">
+        </div>
+        <div class="infocontainer">
+        <div class="info">
+        <h1 class="name"><span>X</span><span>a</span><span>c</span><span>h</span><span>i</span></h1>
+        <p class="title">UI/UX Graphic Designer</p>
+    </div>
+</div>
+
+<div class="friendscontainer">
+    <div class="friendprofile">
+        <img src="./images/hillario.jpeg" alt="Profile 1">
+    </div>
+    <div class="friendprofile">
+        <img src="./images/jayzel.jpeg" alt="Profile 2">
+    </div>
+    <div class="friendprofile">
+        <img src="./images/IMG_0282 (1).jpg" alt="Profile 3">
+    </div>
+    <div class="friendprofile">
+        <img src="./images/remetio.jpeg" alt="Profile 4">
+    </div>
+    <div class="friendprofile">
+        <img src="./images/verona.jpeg" alt="Profile 6">
+    </div>
+</div>
+</div>
+
+
+    <div class="dividersss"></div>
+    <div class="linkcontainer">
+        <div class="link" onclick="showContent('content1')">Post</div>
+        <div class="link" onclick="showContent('content2')">About</div>
+        <div class="link" onclick="showContent('content3')">Friends</div>
+        <div class="link" onclick="showContent('content4')">Gallery</div>
+    </div>
+    <div id="content1" class="content">Content for Link 1 goes here.</div>
+
+<!-------- -------ABOUT PAGE------------------>
+<div id="content2" class="content">
+    <h1>About</h1>
+
+    <div class="content2container">
+        <img src="./images/portfolio.png" alt="Work">
+        <h4>Work at Google since - August 2, 2003 to present</h4>
+        <div class="end-container">
+        <img class="end" src="./images/friends.png" alt="">
+        <img class="end" src="./images/more.png" alt="">
+    </div>
+    </div>
+
+    <div class="content2container">
+        <img src="./images/education.png" alt="Education">
+        <h4>Studied BS-IT (Bachelor of Science in Information Technology) - Programming Major at ICCT Colleges</h4>
+        <div class="end-container">
+        <img class="end" src="./images/travel.png" alt="">
+        <img class="end" src="./images/more.png" alt="">
+    </div>
+</div>
+
+    <div class="content2container">
+        <img src="./images/home (1).png" alt="Living">
+        <h4>Lives in San Fernando, Pampanga</h4>
+        <div class="end-container">
+        <img class="end" src="./images/travel.png" alt="">
+        <img class="end" src="./images/more.png" alt="">
+    </div>
+    </div>
+
+    <div class="content2container">
+        <img src="./images/location.png" alt="location">
+        <h4>From San Fernando, Pampanga</h4>
+        <div class="end-container">
+        <img class="end" src="./images/travel.png" alt="">
+        <img class="end" src="./images/more.png" alt="">
+    </div>
+    </div>
+
+    <div class="content2container">
+        <img src="./images/love-hand-drawn-heart-symbol-outline.png" alt="In a Relationship">
+        <h4>In a relationship with you</h4>
+        <div class="end-container">
+        <img class="end" src="./images/travel.png" alt="">
+        <img class="end" src="./images/more.png" alt="">
+    </div>
+    </div>
+</div>
+
+
+
+    <div id="content3" class="content">Content for Link 3 goes here.</div>
+
+
+    <div id="content4" class="content">Content for Link 4 goes here.</div>
+
+
+<script>
+    // JavaScript for dropdown functionality
+    function showContent(contentId) {
+    // Hide all content
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => {
+        content.style.display = 'none';
+    });
+    
+    // Show the selected content
+    const selectedContent = document.getElementById(contentId);
+    selectedContent.style.display = 'block';
+}
+
+const nameText = document.querySelector('.name');
+const text = nameText.textContent;
+nameText.innerHTML = '';
+
+text.split('').forEach(letter => {
+    const span = document.createElement('span');
+    span.textContent = letter;
+    nameText.appendChild(span);
+});
+
+function showContent(contentId) {
+    // Hide all content elements
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => {
+        content.style.display = 'none';
+    });
+
+    // Show the selected content
+    const selectedContent = document.getElementById(contentId);
+    if (selectedContent) {
+        selectedContent.style.display = 'block';
+    }
+
+    // Remove active class from all links
+    const links = document.querySelectorAll('.link');
+    links.forEach(link => {
+        link.classList.remove('active');
+    });
+
+    // Add active class to the clicked link
+    const activeLink = Array.from(links).find(link => link.innerText.toLowerCase() === contentId.replace('content', '').toLowerCase());
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
+}
+
+
+
+</script>
+</body>
+</html>

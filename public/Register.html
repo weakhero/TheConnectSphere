@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/logoofweb.png" type="image/png">
+    <title>Register - Connect Sphere</title>
+    <link rel="stylesheet" href="./css/Register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="branding">
+            <h1>Connect Sphere</h1>
+            <p>Join our community today!</p>
+        </div>
+        <h2>User Registration</h2>
+        <form id="registerForm"> <!-- Added ID here -->
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <a href="index.html"><button type="submit" class="btn">Register</button></a>
+        </form>
+
+        <!-- Add a div for registration messages -->
+        <div id="registrationMessage" style="color: red;"></div> <!-- Message will be shown here -->
+        <div class="form-footer">
+            <p>Already have an account? <a href="./index.html">Login here</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+    
+            const formData = {
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value,
+                email: document.getElementById('email').value,
+            };
+    
+            const response = await fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            const result = await response.json();
+            const messageDiv = document.getElementById('registrationMessage');
+            if (response.status === 201) {
+                messageDiv.style.color = 'green';
+                messageDiv.textContent = result.message;
+            } else {
+                messageDiv.style.color = 'red';
+                messageDiv.textContent = result.message;
+            }
+        });
+    </script>
+    
+</body>
+</html>

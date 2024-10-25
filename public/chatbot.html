@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chatbot</title>
+    <link rel="stylesheet" href="./css/chatbot.css">
+
+</head>
+<body>
+    <div class="chat-container">
+        <div class="namecontainer">
+
+            <img src="./images/saramwa.jpg" alt="">
+            <h3>Xachi</h3>
+            <img class="iconmess" src="./images/phone-call.png" alt="">
+            <img class="iconmess" src="./images/zoom.png" alt="">
+            <img class="iconmess" src="./images/remove.png" alt="">
+            <img class="iconmess" src="./images/reject.png" alt="">
+
+        </div>
+        <div class="chat-box" id="chat-box">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="input-box">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <img class="send" src="./images/send.png" onclick="sendMessage()">
+        </div>
+    </div>
+
+    <script>
+        // script.js
+function sendMessage() {
+    const userInput = document.getElementById("user-input").value;
+    if (userInput.trim() === "") {
+        return;
+    }
+
+    // Display user message
+    displayMessage(userInput, "user-message");
+
+    // Get bot response
+    const botResponse = getBotResponse(userInput);
+    
+    // Display bot response after a short delay (for realism)
+    setTimeout(() => {
+        displayMessage(botResponse, "bot-message");
+    }, 500);
+
+    // Clear the input
+    document.getElementById("user-input").value = "";
+}
+
+function displayMessage(message, className) {
+    const chatBox = document.getElementById("chat-box");
+    
+    const messageDiv = document.createElement("div");
+    messageDiv.className = `message ${className}`;
+    messageDiv.textContent = message;
+    
+    chatBox.appendChild(messageDiv);
+    
+    // Scroll chat to the bottom
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function getBotResponse(input) {
+    // Simple keyword-based responses
+    input = input.toLowerCase();
+    
+    if (input.includes("hello")) {
+        return "Hi there! How can I help you today?";
+    } else if (input.includes("how are you")) {
+        return "I'm just a bot, but I'm doing great!";
+    } else if (input.includes("bye")) {
+        return "Goodbye! Have a nice day!";
+    } else {
+        return "Sorry, I don't understand that.";
+    }
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+
+
+#content2 h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    color: #4b3d3d;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content2container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.content2container img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.content2container h4 {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.end-container {
+    display: flex;
+    justify-content: flex-end; /* Align end images to the right */
+    width: 100%; /* Take the full width */
+    margin-top: auto; /* Pushes the end container to the bottom */
+}
+
+.content2container .end {
+    width: 30px;
+    height: 30px;
+    margin-left: 0%; /* Space between end images */
+    cursor: pointer;
+}
+.end {
+    width: 25px;
+    height: 25px;
+    margin: 0; /* Remove any margin */
+    transition: transform 0.2s ease; /* Smooth transition for the zoom effect */
+}
+
+.end:hover {
+    transform: scale(1.2); /* Scale the icon to 120% of its size on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    #content2 {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .content2container img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .content2container h4 {
+        font-size: 1rem;
+    }
+
+    .content2container .end {
+        width: 25px;
+        height: 25px;
+        
+    }
+}

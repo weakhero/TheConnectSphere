@@ -1,0 +1,1376 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+        /* Default (Light Mode) */
+        :root {
+            --bg-color: rgb(200, 200, 200);
+            --text-color: rgb(50, 50, 50);
+            --link-color: black;
+            --div-bg-color: #f1f1f1;
+            --hover-bg-color: #bbbbbb; /* Light mode hover background color */
+            --hover-text-color: rgb(29, 28, 28);   /* Light mode hover text color */
+          }
+          
+          /* Dark Mode */
+          .dark-mode {
+            --bg-color: #9762d4;
+            --text-color: white;
+            --link-color: rgb(218, 212, 223);
+            --div-bg-color: rgb(214, 189, 253);
+            --hover-bg-color: #eed9ff; /* Light mode hover background color */
+            --hover-text-color: white;   /* Light mode hover text color */
+          }
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    background-color: var(--bg-color);
+    overflow: auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background: rgb(147,74,255);
+    background: linear-gradient(180deg, rgba(147,74,255,1) 0%, rgba(158,82,223,1) 61%, rgba(219,225,226,0.5797968845741421) 100%);
+    z-index: 1000000;
+    position: fixed;
+    width: 100%;
+}
+
+.logo img {
+    height: 80px;
+    margin-left: 20px;
+}
+
+.nav-links{
+    display: flex; /* Flexbox layout to control the alignment */
+    justify-content: space-between; /* Space out the items */
+    align-items: center; /* Vertically center items */
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Optional max width for larger screens */
+    margin: 0 auto; /* Center the container */
+    padding: 10px; /* Optional padding */
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-left: 600px;
+    
+}
+
+.nav-links ul li a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+.nav-links img{
+    width: 30px;
+    height: 30px;
+    margin-right: 25px;
+}
+
+.headeritems{
+    width: 20px;
+    width: 20px;
+}
+
+
+#setting {
+    width: 22px;
+    height: 22px;
+    margin-top: -32px;
+    position: absolute; /* Make sure the position is absolute */
+    right: 29%; /* Adjust the right distance to position it towards the right */
+    color: var(--text-color);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position it absolutely */
+    top: 50px; /* Position it directly below the #setting element */
+    left: -200px; /* Align it with the left edge of the #setting */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin: 5px 70%;
+    width: 400px;
+    height: 75vh;      /* -----------the black-------------*/
+    background-color: #29272bab;
+    border-radius: 10px;
+}
+
+.dropsettings{
+    padding-top: 15px;
+    margin-left: 15px;
+}
+.dropsettingscontainer a{
+    text-decoration: none;
+    color: black;
+}
+
+.settingdevider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;           /* Adjust padding for desired spacing */
+    text-align: center;
+    margin-bottom: 0;
+    width: 95%;
+    border-radius: 20px;
+}
+
+.settingdevider img {
+    margin-bottom: 8px;      /* Adjust to minimize space below image */
+    margin-left: -220px;
+    width: 25px;
+    height: 25px;
+
+}
+
+ .dropsettingscontainer h2 {
+    margin-top: 5px;         /* Reduce space above the heading */
+    margin-bottom: 0;        /* Remove extra space below the heading */
+    text-align: start;
+    font-style: bold;
+    font-size: 1.5rem;
+}
+
+
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show the dropdown menu on hover */
+}
+
+.dropsettingscontainer{
+    width: 350px;
+    max-height: 63vh;
+    background-color: #a3a3a3e0;
+    margin-left: 28px;
+    margin-top: 25px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.search-input {
+    padding: 10px 30px 10px 40px; /* Adjust padding to make room for the icon */
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 87%;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px; /* Position the icon inside the input */
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Prevent clicks on the icon */
+}
+
+p{
+    font-size: 0.8rem;
+    padding-top: 5px;
+    padding-left: 18px;
+}
+.settingdevider h4 {
+    font-size: 1.2rem;
+    text-align: start;
+    margin-left: 50px;
+    margin-top: -35px;
+}
+
+/*------------side bar-----------------*/
+.sidebar {
+    width: 400px;
+    height: 100vh;
+    background-color: var(--bg-color);
+    padding-top: 100px;
+    padding-left: 20px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 40px 10px 20px;
+    border-radius: 20px;
+    border: 1px solid #c6b5dd;
+    margin-bottom: 20px;
+    outline: none;
+    color: #333;
+    background-color: var(--div-bg-color);
+    background-image: url('./imagecss/search.png');
+    background-position: 5% center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding: 5px;
+}
+
+.search-box img{
+    pointer-events: none;
+}
+
+.search-box input[type="text"] {
+    padding-left: 50px; /* Adjust the value to your preference */
+    font-size: 15px;
+}
+
+#divprofile:hover{
+    background-color: var(--hover-bg-color);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    justify-content: start;
+    padding: 10px;
+}
+
+.user-profile:hover{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.user-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+a{
+text-decoration: none;
+}
+
+.user-profile p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-left:-20px;
+    color: var(--text-color);
+}
+
+
+.menu ul {
+    list-style: none;
+}
+
+.menu ul li {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    transition: filter 0.8s ease;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-size: 18px;
+    transition: background-color 1s ease-in-out, color 1s ease-out, transform 1s ease, opacity 0.3s ease;
+}
+
+/* Hover Effect */
+.menu ul li a:hover {
+    background-color: #d4d4d4; /* Change this to your preferred color */
+    color: var(--hover-text-color);
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.menu ul li a:hover img {
+    filter: brightness(0) invert(1); /* Invert image color on hover */
+}
+
+#infoContainer .content{
+    background-color: var(--div-bg-color);
+    width: 50px;
+    height: 50px;
+
+}
+
+
+.sidebarline{
+    height: 2px;
+    width: 400PX;
+}
+
+
+.friend-requests h2 {
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color:var(--text-color);
+}
+.friend-requests h2 a{
+    font: var(--hover-text-color);
+}
+
+.friend-requests .request {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.friend-requests .request img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.friend-requests button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: var(--div-bg-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.friend-requests a{
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+.buttoncolor{
+    background-color: var(--div-bg-color);
+}
+
+.friend-requests button:hover {
+    background-color: var(--hover-bg-color);
+}
+
+.contacts h2 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.contacts ul {
+    list-style: none;
+}
+
+.contacts ul li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+.contacts ul li img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/*-----------------------middlecontainer---------------------*/
+.friendscontainer {
+    display: flex;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    justify-content: center; /* Centers items horizontally */
+}
+
+.friendprofile {
+    flex: 0 1 100px; /* Allows items to grow and shrink, with a base width of 100px */
+    height:100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    background-color: var(--div-bg-color);
+    margin: 10px;
+    position: relative;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;
+}
+
+.friendprofile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.friendprofile:hover .zoom-image {
+    transform: scale(1.2); /* Scale the image up on hover */
+}
+
+
+.plusicon {
+    position: absolute; /* Position it over the image */
+    top: 80%; /* Center vertically */
+    left: 80%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the icon */
+    width: 30px; /* Set width for the plus icon */
+    height: 30px; /* Set height for the plus icon */
+    border-radius: 50%; /* Make the plus icon circular */
+    background-color: rgba(255, 255, 255, 0.7); /* Optional: background color */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Optional: add shadow for depth */
+    z-index: 10000; /* Ensure it's on top */
+}
+
+.friendprofile-wrapper {
+    position: relative; /* Allows the plus icon to be positioned absolutely within this container */
+    display: inline-block; /* Makes the wrapper fit tightly around the contents */
+}
+
+.postingdiv {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    background-color: var(--div-bg-color);
+    padding: 10px;
+    overflow: hidden; /* Prevent changes outside from affecting the internal layout */
+    margin-top: 20px;
+}
+
+.middlecontainer {
+    width: 50%;
+    height: auto; /* Let the container expand based on content */
+    margin-top: -42%;
+    border-radius: 20px;
+    margin-left: 40%;
+}
+
+#user-profile-inmiddlecontainer {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    margin-left: 50px;
+}
+
+#user-profile-inmiddlecontainer img {
+    margin-left: -50px;
+}
+
+#user-profile-inmiddlecontainer p {
+    padding-left: 20px;
+    margin-bottom: -10px;
+}
+
+.middlecontainer input {
+    width: 90%;
+    height: 6vh;
+    border-radius: 50px;
+    border: 1px solid #d0a9f0;
+    outline: none;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin-top: 10px;
+    padding: 10px 40px 10px 20px;
+    background-image: url('./imagecss/send.png');
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding: 10px;
+}
+
+.iconsss {
+    margin-left: 70px;
+    display: flex;
+}
+
+.iconsss img {
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.5s ease; /* Add transition for the image zoom */
+}
+
+.gallery-icon:hover,
+.camera-icon:hover,
+.microphone-icon:hover,
+.location-icon:hover,
+.hashtag-icon:hover {
+    transform: scale(1.2); /* Zoom in effect on hover */
+}
+
+
+/*------------------GALLERY CONTAINER--------------------------*/
+#galleryInfo{
+    display: flex;
+    flex-direction: column;
+    width: 56%; /* Makes the container responsive */
+    height: auto;
+    margin-top: 0; /* Adjust this for top spacing */
+    background-color: transparent;
+    margin-left: 37%;
+    margin-top: 20px;
+    background-color:var(--div-bg-color);
+    padding-left: 50px;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+.gallerydevider{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    color: var(--text-color);
+    font-size: 2.5rem;
+}
+ .more1{
+    width: 35px;
+    height: 35px;
+    margin-right: 50px;
+ }
+
+
+.dividersss {
+    width: 95%;
+    height: 10px;
+    box-shadow: inset 5px 5px 3px #8b8b8b,
+                inset -5px -5px 3px #ffffffc2;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#favorite{
+    width: 30%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+/*----------------------Rowing----------------------------*/
+
+.profile-section, .photos-section, .save-section {
+    margin: 20px;
+    margin-left: -10px;
+}
+
+.gallery-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left */
+    gap: 10px; /* Adjust this value to control the space between items */
+}
+
+.image {
+    width: 150px;
+    height: 210px;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: transform 0.5s ease; /* Add transition for the zoom effect */
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.5s ease; /* Add transition for the image zoom */
+}
+
+.image:hover img {
+    transform: scale(1.2); /* Zoom in effect on hover */
+}
+
+.add-btn {
+    width: 100px;
+    height: 140px;
+    background-color: var(--bg-color);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: transform 0.5s ease; /* Add transition for the image zoom */
+}
+
+.add-btn:hover {
+    transform: scale(1.2); /* Zoom in effect on hover */
+}
+
+h2 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.image, .add-btn {
+    margin: 15px;
+    overflow: hidden;
+}
+
+
+/*------------------------vlog---------------------------------------*/
+
+#timelineInfo{
+    display: flex;
+    flex-direction: column;
+    width: 56%; /* Makes the container responsive */
+    height: auto;
+    margin-top: 0; /* Adjust this for top spacing */
+    background-color: transparent;
+    margin-left: 37%;
+    margin-top: 20px;
+    padding-left: 50px;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+.post-container {
+    width: 95%;
+    background-color:var(--div-bg-color);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.image-gallery img {
+    width: 30%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.interaction-bar {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.interaction-bar span {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.interaction-bar span::before {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    margin-right: 5px;
+}
+
+.likes::before {
+    content: "\f004"; /* Heart icon */
+}
+
+.comments::before {
+    content: "\f075"; /* Comment icon */
+}
+
+.shares::before {
+    content: "\f064"; /* Share icon */
+}
+
+
+/*------------------------friend----------------------------------*/
+#friendInfo{
+    display: flex;
+    flex-direction: column;
+    width: 56%; /* Makes the container responsive */
+    height: auto;
+    margin-top: 0; /* Adjust this for top spacing */
+    background-color: transparent;
+    margin-left: 37%;
+    margin-top: 20px;
+    padding-left: 50px;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+.container {
+    max-width: 90%;
+    margin-left: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.section-header a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.friend-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.friend-card {
+    background-color: var(--div-bg-color);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 200px;
+    height: 40vh;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.friend-card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.friend-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15%;
+}
+
+.friend-card h3 {
+    font-size: 14px;
+    margin: 10px 0 5px;
+}
+
+.friend-card p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.friend-card button {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.friend-card button:hover {
+    background-color: #7b4ead;
+}
+
+/*----------------------chatbot-----------------------*/
+
+.chat-container {
+    width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+    position: fixed; /* Keeps it fixed even when scrolling */
+    bottom: 0; /* Aligns it to the bottom of the page */
+    right: 0; /* Aligns it to the right side of the page */
+    background-color: var(--div-bg-color); /* Background color for visibility */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for styling */
+    margin-right: 20px;
+    transition: height 0.3s ease, opacity 0.3s ease;
+}
+.chat-box, .input-box {
+    transition: all 0.3s ease; /* Add transition for chat box and input box */
+}
+
+.minimized {
+    height: 50px; /* Height for minimized state (just showing the header) */
+    opacity: 0.8; /* Optional opacity change for a fading effect */
+}
+
+.namecontainer{
+    width: 100%;
+    height: 50px;
+    background-color: #663bff;
+    display: flex;
+}
+
+.namecontainer img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin: 5px;
+}
+
+.namecontainer h3{
+    font-size: 1rem;
+    margin-right: 70px;
+    padding-top: 10px;
+}
+
+.chat-box {
+    height: 300px;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #ecd2fd;
+}
+
+.message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.user-message {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #969090;
+    color: black;
+    align-self: flex-start;
+}
+
+.input-box {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+}
+
+#user-input {
+    flex: 1;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #8a8a8a;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.input-box img {
+    width: 20px;
+    height: 25px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+.namecontainer .iconmess{
+    width: 20px;
+    height: 20px;
+    margin-top: 15px;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+
+/*--------------------Friends Sections-------------------------*/
+#Findfriends{
+    display: flex;
+    flex-direction: column;
+    width: 56%; /* Makes the container responsive */
+    height: auto;
+    margin-top: 0; /* Adjust this for top spacing */
+    background-color: transparent;
+    margin-left: 37%;
+    background-color:transparent;
+    padding-left: 50px;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+.find-friend-list {
+    width: 95%;
+    background-color: var(--div-bg-color);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+}
+.friend-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+
+.friend-item:hover{
+    background-color: var(--hover-bg-color);
+}
+
+.friend-item img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.friend-item .info {
+    flex-grow: 1;
+    margin-left: 15px;
+}
+.friend-item button {
+    background-color: var(--bg-color);
+    border: none;
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.friend-item button:hover {
+    background-color: var(--div-bg-color);
+}
+
+/*--------------------Datings Sections-------------------------*/
+#Datings {
+    display: flex;
+    flex-direction: column;
+    width: 56%; /* Makes the container responsive */
+    height: auto;
+    margin-top: 0; /* Adjust this for top spacing */
+    background-color: transparent;
+    margin-left: 37%;
+    background-color:transparent;
+    padding-left: 50px;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+.findmatchcon{
+    background-color: var(--div-bg-color);
+    width: 95%;
+    height: auto;
+    border-radius: 20px;
+}
+.findmatchcon h1{
+    font-size: 2rem;
+    margin: 30px;
+    padding-top: 20px;
+}
+
+ /* Dating Profile Card */
+.dating-profile-card {
+    width: 320px;
+    height: 80vh;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 1, 2, 3.50); /* Updated shadow */
+    background-color: var(--bg-color);
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    margin-left: 32%;
+    margin-top: 20px;
+}
+
+.dating-header {
+    background-color: var(--bg-color);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.dating-header button {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.dating-header button:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--text-color);
+}
+
+.dating-profile-image {
+    width: 100%;
+    height: 30%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.dating-profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.dating-profile-info {
+    padding: 10px 15px;
+    flex-grow: 1;
+    overflow-y: hidden;
+}
+
+.dating-profile-info h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.dating-profile-info h3 {
+    margin-top: 5px;
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+.dating-location, .dating-height {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.dating-location i, .dating-height i {
+    margin-right: 10px;
+}
+
+.dating-actions {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    flex-shrink: 0;
+}
+
+.dating-actions button {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    margin: 0 8px;
+    background-color: var(--bg-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.dating-actions button:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-text-color);
+}
+
+.image-dating {
+    height: 45px;
+    width: 45px;
+}
+
+.dating-gallery {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    flex-shrink: 0;
+}
+
+.dating-gallery img {
+    width: 30%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.nav-buttons {
+    display: flex;
+    justify-content: space-between; /* Keep buttons spaced evenly */
+    width: 100%; /* Full width to align buttons */
+    margin-bottom: 10px; /* Space between buttons and the card */
+    position: relative; /* Position relative for absolute positioning */
+    top: -50vh; /* Move buttons up by 50px */
+}
+
+.nav-buttons button {
+    padding: 10px 20px;
+    margin: 0 15%;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: transparent;
+}
+.nav-buttons button img {
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+
+.nav-buttons button:hover img {
+    transform: scale(1.1); /* Optional: Zoom in effect on the image */
+}
+
+
+
+
+/*--------------------CoreMemories Sections-------------------------*/
+#CoreMemories{
+    display: flex;
+    flex-direction: column;
+    width: 56%; /* Makes the container responsive */
+    height: auto;
+    margin-top: 0; /* Adjust this for top spacing */
+    background-color: transparent;
+    margin-left: 37%;
+    margin-top: 20px;
+    padding-left: 50px;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+#CoreMemories h1{
+    margin-left: -87px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.box {
+    position: relative;
+    height: 130px;
+    width: 70px;
+    transform-style: preserve-3d;
+    animation: animate 22s linear infinite;
+    top: 0; /* Initial position */
+    transition: all 0.3s ease; /* Smooth transition for positioning */
+    z-index: -1;
+    margin-bottom: 50px;
+}
+
+@keyframes animate {
+    0% {
+    transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+    transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+
+.box div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 130px;
+    width: 70px;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transform: rotateY(calc(var(--v) * 45deg)) translateZ(120px);
+    -webkit-box-reflect: below 5px linear-gradient(transparent, transparent, rgba(12, 12, 12, 0.164));
+    border-radius: 5px; /* Added border radius */
+}
+
+.box div img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px; /* Added border radius */
+}
+
+/*--------------------Profile Sections-------------------------*/
+.profile-card {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.Originalprofileheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: var(--div-bg-color);
+}
+
+.originalprofileinfo h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.originalprofileinfo p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.originalprofileinfo .title {
+    font-style: italic;
+    font-size: 13px;
+}
+
+.friends-list {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.friends-list img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.profile-photo {
+    position: relative;
+}
+
+.profile-photo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.add-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--div-bg-color);
+    color: var(--text-color);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+.add-icon:hover {
+    transform: scale(2); /* Optional: Zoom in effect on the image */
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.profile-actions button {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--div-bg-color);
+    cursor: pointer;
+}
+
+.memories {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+.memory {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18%;
+    transition: transform 0.3s ease;
+}
+
+.memory:hover img {
+    transform: scale(1.1); /* Optional: Zoom in effect on the image */
+}
+
+.memory img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.memory img:hover img {
+    transform: scale(1.1); /* Optional: Zoom in effect on the image */
+}
+
+.memory p {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.add-memory {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--div-bg-color);
+    border-radius: 30px;
+    width: 15%;
+    height: 20vh;
+    margin-top: 25px;
+    transition: transform 0.3s ease;
+}
+.add-memory:hover {
+    transform: scale(1.1); /* Optional: Zoom in effect on the image */
+}
+
+.add-icon-large {
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.add-icon-large:hover {
+    transform: scale(2); /* Optional: Zoom in effect on the image */
+}

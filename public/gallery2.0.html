@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header with Logo and Navigation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <link rel="stylesheet" href="./css/gallery2.0.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./images/Sclogos.png" alt="Logo">
+        </div>
+        <nav class="nav-links">
+            <ul class="header-menu">
+                <li>
+                    <a class="headeritems link" href="#" onclick="showContent('timelineInfo'); hideCoreMemories('CoreMemories');">
+                        <img src="./images/home (1).png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a class="headeritems link" href="#gallery" onclick="showContent('galleryInfo'); hideCoreMemories('CoreMemories');">
+                        <img src="./images/gallery.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a class="headeritems link" href="#" onclick="showContent('friendInfo'); hideCoreMemories('CoreMemories');">
+                        <img src="./images/id-card.png" alt="">
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="headeritems link" href="#">
+                        <img id="settingspng" src="./images/setting-lines.png" alt="">
+                    </a>
+                    <div class="dropdown-content">
+                        <h1 class="dropsettings">Settings</h1>
+                        <div class="dropsettingscontainer">
+                            <input type="text" class="search-input" placeholder="🔍 Search...">
+                            <h2>Preferences</h2>
+                            <p>Customize your experience on Connect Sphere</p>
+                            <a href="#" class="settingdevider">
+                                <img class="img" src="./images/accesibility.png" alt="">
+                                <h4>Accessibility</h4>
+                            </a>
+                            <a href="#" class="settingdevider">
+                                <img class="img" src="./images/travel.png" alt="">
+                                <h4>Language and Region</h4>
+                            </a>
+                            <a href="#" class="settingdevider">
+                                <img class="img" src="./images/activity.png" alt="">
+                                <h4>Activity</h4>
+                            </a>
+                            <h2>Your Activity</h2>
+                            <p>Review your activity on Connect Sphere</p>
+                            <a href="#" id="themeToggle" class="settingdevider">
+                                <img class="img" src="./images/user-interface.png" alt="">
+                                <h4>Darkmode</h4>
+                            </a>
+                            <a href="index.html" class="settingdevider">
+                                <img class="img" src="./images/logout.png" alt="">
+                                <h4>Log out</h4>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        
+</header>
+
+    <div class="sidebar">  
+        <!-- Search Bar -->
+        <div class="search-box">
+            <input type="text" placeholder="Search.....">
+        </div>
+
+        <!-- User Profile -->
+        <a href="#" onclick="showContent('OriginProfile'); showTimeline(); hideBothContainers();">
+            <div id="divprofile" class="user-profile">
+              <img src="./images/saramwa.jpg" alt="User Profile">
+              <p>Xachi Pogi</p>
+            </div>
+          </a>
+
+        <!-- Menu Items -->
+        <div class="menu">
+            <ul>
+                <li><a href="#"  onclick="showContent('Datings');hideBothContainers(); hidepostingdiv();"  ><img src="./images/tinder.png" alt="Dating"> Dating</a></li>
+                <li ><a href="#" onclick="toggleChat()" ><img src="./images/massege.png" alt="Messages">Messages</a></li>
+                <li><a href="#" onclick="showContent('Findfriends'); hideCoreMemories('CoreMemories');" ><img src="./images/friends.png" alt="Friends">Find Friends</a></li>
+                <li><a href="#" onclick="showContent('CoreMemories'); showCoreMemories('CoreMemories');showTimeline();" ><img src="./images/business.png" alt="Core Memories"> Core Memories</a></li>
+            </ul>
+        </div>
+
+
+        <hr class="sidebarline">
+
+        <!-- Friend Requests -->
+        <div class="friend-requests">
+            <h2>Friend Request <span><a href="#">see all</a></span></h2>
+            <div class="request">
+                <img src="./images/sara.jpg" alt="Crush ko hehe">
+                <div>
+                    <p>Crush ko hehe</p>
+                    <button>Confirm</button>
+                    <button>Remove</button>
+                </div>
+            </div>
+            <div class="request">
+                <img src="./images/jayzel.jpeg" alt="Ako si Natoy">
+                <div>
+                    <p>Ako si Natoy</p>
+                    <button>Confirm</button>
+                    <button>Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <hr class="sidebarline">
+
+        <!-- Contacts -->
+        <div class="contacts">
+            <h2>Contacts</h2>
+            <ul>
+                <li><img src="./images/remetio.jpeg" alt="Lin Tech"> Lin Tech</li>
+                <li><img src="./images/hillario.jpeg" alt="Maku"> Maku</li>
+                <li><img src="./images/jayzel.jpeg" alt="Jeysel"> Jeysel</li>
+                <li><img src="./images/sara.jpg" alt="Sal Tech"> Sal Tech</li>
+                <li><img src="./images/verona.jpeg" alt="JC"> Verona</li>
+            </ul>
+        </div>
+    </div>
+
+<div  class="middlecontainer">
+    <div id="OriginProfile"  class="centerContainer" style="display: none;">
+        <div class="profile-card">
+            <div class="Originalprofileheader">
+                <div class="originalprofileinfo">
+                    <h1>Xachi</h1>
+                    <p>@Xachi pogi</p>
+                    <p class="title">UX/UI Poging Graphic Designer</p>
+                    <div class="friends-list">
+                        <img src="./images/1.jfif" alt="friend1">
+                        <img src="./findfriendspage/gabby.jfif" alt="friend2">
+                        <img src="./findfriendspage/jc.jpg" alt="friend3">
+                        <p>350 Friends</p>
+                    </div>
+                </div>
+                <div class="profile-photo">
+                    <img src="./images/saramwa.jpg" alt="Profile Photo">
+                    <div class="add-icon">+</div>
+                </div>
+            </div>
+    
+            <div class="profile-actions">
+                <button>Edit profile</button>
+                <button>Share Profile</button>
+            </div>
+    
+            <div class="memories">
+                <div class="memory">
+                    <img src="./images/sara.jpg" alt="Memory">
+                    <p>^^</p>
+                </div>
+                <div class="memory">
+                    <img src="./images/6.jfif" alt="Memory">
+                    <p>mi love</p>
+                </div>
+                <div class="memory">
+                    <img src="./images/3.jfif" alt="Memory">
+                    <p>mememe</p>
+                </div>
+                <div class="memory">
+                    <img src="./images/5.jfif" alt="Memory">
+                    <p>travel</p>
+                </div>
+                <div class="memory add-memory">
+                    <div class="add-icon-large">+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <!---------------------------Corememories Sections -------------------->
+    <div id="CoreMemories"class="content" class="centerContainer" style="display: none;">
+        <div class="box"> 
+            <div class="CoreUpload" id="core1" style="--v: 1;"><img src="./images/jayzel.jpeg"></div>
+            <div class="CoreUpload" id="core2" style="--v: 2;"><img src="./images/hillario.jpeg"></div>
+            <div class="CoreUpload" id="core3" style="--v: 3;"><img src="./images/remetio.jpeg"></div>
+            <div class="CoreUpload" id="core4" style="--v: 4;"><img src="./images/sara.jpg"></div>
+            <div class="CoreUpload" id="core5" style="--v: 5;"><img src="./images/verona.jpeg"></div>
+            <div class="CoreUpload" id="core6" style="--v: 6;"><img src="./images/mythumbnail.jpg"></div>
+            <div class="CoreUpload" id="core7" style="--v: 7;"><img src="./images/462550780_1242298306801855_6609910467592762200_n.jpg"></div>
+            <div class="CoreUpload" id="core8" style="--v: 8;"><img src="./images/IMG_0282 (1).jpg"></div>
+        </div>
+        <h1>Core Memories</h1>
+        
+        </div>
+        <div id="friendscontainer" class="centerContainer" style="display: flex;" >
+            <div class="friendprofile-wrapper">
+                <div id="friendprofile1" class="friendprofile">
+                    <img src="./images/saramwa.jpg" class="zoom-image">
+                </div>
+                <img class="plusicon" src="images/plus.png" class="zoom-image" alt="">
+            </div>
+            <div class="friendprofile">
+                <img src="./images/hillario.jpeg" class="zoom-image">
+            </div>
+            <div class="friendprofile">
+                <img src="./images/jayzel.jpeg" class="zoom-image">
+            </div>
+            <div class="friendprofile">
+                <img src="./images/IMG_0282 (1).jpg" class="zoom-image" >
+            </div>
+            <div class="friendprofile">
+                <img src="./images/remetio.jpeg" class="zoom-image">
+            </div>
+            <div class="friendprofile">
+                <img src="./images/verona.jpeg" class="zoom-image">
+            </div>
+        </div>
+
+        <div class="postingdiv">
+        <div id="user-profile-inmiddlecontainer" class="user-profile">
+            <p>@Xachi pogi</p>
+            <img src="./images/saramwa.jpg" alt="User Profile">
+            <input type="text" placeholder="Post something....">
+        </div>
+        <div class="iconsss">
+            <img class="gallery-icon" src="./images/gallery.png" alt="">
+            <img class="camera-icon" src="./images/camera.png" alt="">
+            <img class="microphone-icon" src="./images/microphone.png" alt="">
+            <img class="location-icon" src="./images/location (1).png" alt="">
+            <img class="hashtag-icon" src="./images/hashtag.png" alt="">
+        </div>
+    </div>
+</div>
+
+            <!---------------------------Find Friends Sections -------------------->
+<div id="infoContainer">
+
+    <div id="Findfriends" class="centerContainer" style="display: none;">
+        <div class="main-content">
+            <h2>Find Friends</h2>
+            <div class="find-friend-list">
+                <div class="friend-item">
+                    <img src="./findfriendspage/zach.jfif" alt="User">
+                    <div class="info">
+                        <p>Zach</p>
+                        <p>25 mutual friends</p>
+                    </div>
+                    <button>Add</button>
+                    <button>Remove</button>
+                </div>
+                <div class="friend-item">
+                    <img src="./findfriendspage/sandy.jfif" alt="User">
+                    <div class="info">
+                        <p>Sandy</p>
+                        <p>15 mutual friends</p>
+                    </div>
+                    <button>Add</button>
+                    <button>Remove</button>
+                </div>
+                <div class="friend-item">
+                    <img src="./findfriendspage/raven.jfif" alt="User">
+                    <div class="info">
+                        <p>Raven</p>
+                        <p>10 mutual friends</p>
+                    </div>
+                    <button>Add</button>
+                    <button>Remove</button>
+                </div>
+                    <div class="friend-item">
+                    <img src="./findfriendspage/khim.jfif" alt="User">
+                    <div class="info">
+                        <p>Khim</p>
+                        <p>10 mutual friends</p>
+                    </div>
+                    <button>Add</button>
+                    <button>Remove</button>
+                </div>
+                    <div class="friend-item">
+                    <img src="./findfriendspage/justin.jfif" alt="User">
+                    <div class="info">
+                        <p>justin</p>
+                        <p>10 mutual friends</p>
+                    </div>
+                    <button>Add</button>
+                    <button>Remove</button>
+                </div>
+                    <div class="friend-item">
+                    <img src="./findfriendspage/jia.jfif" alt="User">
+                    <div class="info">
+                        <p>Jia</p>
+                        <p>10 mutual friends</p>
+                    </div>
+                    <button>Add</button>
+                    <button>Remove</button>
+                </div>
+                <div class="friend-item">
+                    <img src="./findfriendspage/gabby.jfif" alt="User">
+                    <div class="info">
+                        <p>Gabby</p>
+                        <p>10 mutual friends</p>
+                    </div>
+                    <button>Add</button>
+                    <button>Remove</button>
+                </div>
+                <div class="friend-item">
+                    <img src="./findfriendspage/ferwin.jfif" alt="User">
+                    <div class="info">
+                        <p>Ferwin</p>
+                        <p>10 mutual friends</p>
+                    </div>
+                    <button>Add</button>
+                    <button>Remove</button>
+                </div>
+
+            </div>
+        </div>
+        
+        </div>
+    
+    <!---------------------------Dating Sections -------------------->
+    <div id="Datings" class="centerContainer" style="display: none;">
+
+        <div class="findmatchcon">
+        <h1>Find Match...</h1>
+        <!-- Dating Profile Cards -->
+    <div id="profile1" class="dating-profile-card">
+        <div class="dating-header">
+            <h2>Jhonny Sins</h2>
+            <button><img class="image-dating" src="./images/heart.png" alt="Heart"></button>
+        </div>
+        <div class="dating-profile-image">
+            <img src="./images/jsinsprof.jfif" alt="Jhonny's Profile Picture">
+        </div>
+        <div class="dating-profile-info">
+            <h2>The Great Doctor</h2>
+            <h3>@jhonny_sins</h3>
+            <div class="dating-location">
+                <i class="fa fa-map-marker"></i>
+                <span>New York, USA</span>
+            </div>
+            <div class="dating-height">
+                <i class="fa fa-arrows-v"></i>
+                <span>6'0"</span>
+            </div>
+        </div>
+        <div class="dating-actions">
+            <button><i class="fa fa-heart"></i></button>
+            <button><i class="fa fa-comment"></i></button>
+            <button><i class="fa fa-share"></i></button>
+        </div>
+        <div class="dating-gallery">
+            <img src="./images/jsins2.jpg" alt="Gallery Image 1">
+            <img src="./images/jsins3.jpg" alt="Gallery Image 2">
+            <img src="./images/jsins4.jfif" alt="Gallery Image 3">
+        </div>
+    </div>
+
+    <div id="profile2" class="dating-profile-card">
+        <div class="dating-header">
+            <h2>Lexi Lore</h2>
+            <button><img class="image-dating" src="./images/heart.png" alt="Heart"></button>
+        </div>
+        <div class="dating-profile-image">
+            <img src="./images/lexiprof.webp" alt="Jhonny's Profile Picture">
+        </div>
+        <div class="dating-profile-info">
+            <h2>Sana all</h2>
+            <h3>@LexiLeres</h3>
+            <div class="dating-location">
+                <i class="fa fa-map-marker"></i>
+                <span>Los Angeles, USA</span>
+            </div>
+            <div class="dating-height">
+                <i class="fa fa-arrows-v"></i>
+                <span>5'5"</span>
+            </div>
+        </div>
+        <div class="dating-actions">
+    <button aria-label="Like"><i class="fa fa-heart"></i></button>
+    <button aria-label="Comment"><i class="fa fa-comment"></i></button>
+    <button aria-label="Share"><i class="fa fa-share"></i></button>
+</div>
+
+        <div class="dating-gallery">
+            <img src="./images/lexi1.jfif" alt="Gallery Image 1">
+            <img src="./images/lexi2.webp" alt="Gallery Image 2">
+            <img src="./images/lexi3.jpg" alt="Gallery Image 3">
+        </div>
+    </div>
+
+    <div id="profile3" class="dating-profile-card">
+        <div class="dating-header">
+            <h2>Mia Khalifa</h2>
+            <button><img class="image-dating" src="./images/heart.png" alt="Heart"></button>
+        </div>
+        <div class="dating-profile-image">
+            <img src="./images/miaprof.jfif" alt="Jhonny's Profile Picture">
+        </div>
+        <div class="dating-profile-info">
+            <h2>The Great Teacher</h2>
+            <h3>@Mia Khalifa/h3>
+            <div class="dating-location">
+                <i class="fa fa-map-marker"></i>
+                <span>Miami, USA</span>
+            </div>
+            <div class="dating-height">
+                <i class="fa fa-arrows-v"></i>
+                <span>5'2"</span>
+            </div>
+        </div>
+        <div class="dating-actions">
+            <button aria-label="Like"><i class="fa fa-heart"></i></button>
+            <button aria-label="Comment"><i class="fa fa-comment"></i></button>
+            <button aria-label="Share"><i class="fa fa-share"></i></button>
+        </div>
+        <div class="dating-gallery">
+            <img src="./images/mia1.jpg" alt="Gallery Image 1">
+            <img src="./images/mia2.jfif" alt="Gallery Image 2">
+            <img src="./images/mia3.jpg" alt="Gallery Image 3">
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button onclick="showPrevProfile()" aria-label="Previous Profile" title="Previous Profile">
+            <img src="./images/left-arrow.png" alt="Previous">
+        </button>
+        <button onclick="showNextProfile()" aria-label="Next Profile" title="Next Profile">
+            <img src="./images/right-arrow.png" alt="Next">
+        </button>
+    </div>
+    
+</div>
+</div>
+    <!--------------------------- Timeline Section -------------------->
+
+    <div id="timelineInfo" class="centerContainer">
+        <div class="post-container">
+            <div class="profile-header">
+                <img src="./images/mythumbnail.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="profile-info">
+                    <span class="username">@CarloTheDev</span>
+                    <p>"ALGORITHM" a word used by programmers when they don't want to explain what they did.</p>
+                </div>
+            </div>
+            <div class="image-gallery">
+                <img src="./images/programmer.jpg">
+                <img src="./images/DSA.jpg">
+                <img src="./images/algo.jpg">
+            </div>
+            <div class="interaction-bar">
+                <span class="likes">13k</span>
+                <span class="comments">450</span>
+                <span class="shares">1k</span>
+            </div>
+        </div>
+        <div class="post-container">
+            <div class="profile-header">
+                <img src="./images/saramwa.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="profile-info">
+                    <span class="username">@Xachipogi</span>
+                    <p>Ang pogi niya haha, blablabla</p>
+                </div>
+            </div>
+            <div class="image-gallery">
+                <img src="./images/1.jfif" alt="Image 1">
+                <img src="./images/2.jfif" alt="Image 2">
+                <img src="./images/3.jfif" alt="Image 3">
+            </div>
+            <div class="interaction-bar">
+                <span class="likes">1k</span>
+                <span class="comments">950</span>
+                <span class="shares">500</span>
+            </div>
+        </div>
+        <div class="post-container">
+            <div class="profile-header">
+                <img src="./images/remetio.jpeg" alt="Profile Picture" class="profile-pic">
+                <div class="profile-info">
+                    <span class="username">@Lin Tech</span>
+                    <p>Sheeeeeeeeeeeeeeeeeeeeeeeesh bulcan!!!!</p>
+                </div>
+            </div>
+            <div class="image-gallery">
+                <img src="./images/bulkan1.jpg" alt="Image 1">
+                <img src="./images/bulcan2.jpg">
+                <img src="./images/bulkan3.jpg" alt="Image 3">
+            </div>
+            <div class="interaction-bar">
+                <span class="likes">13k</span>
+                <span class="comments">450</span>
+                <span class="shares">1k</span>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------- friends Section------------------->
+
+    <div id="friendInfo" class="centerContainer" style="display:none;">
+        <!-- Content for About section can be added here -->
+        <div class="container">
+            <!-- Friends Request Section -->
+            <div class="section">
+                <div class="section-header">
+                    <h2><b>Friends Request</b></h2>
+                    <a href="#">see all</a>
+                </div>
+                <div class="friend-list">
+                    <div class="friend-card">
+                        <img src="./images/ff1.jpg" alt="User">
+                        <h3>Crush ko hehe</h3>
+                        <p>4 mutual friends</p>
+                        <button>Confirm</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                    <div class="friend-card">
+                        <img src="./images/ff2.jpg" alt="User">
+                        <h3>Ako si Natoy</h3>
+                        <p>6 mutual friends</p>
+                        <button>Confirm</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                    <div class="friend-card">
+                        <img src="./images/ff3.jpg" alt="User">
+                        <h3>Roxxanne</h3>
+                        <p>8 mutual friends</p>
+                        <button>Confirm</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- All Friends Section -->
+            <div class="section">
+                <div class="section-header">
+                    <h2><b>All Friends</b></h2>
+                    <a href="#">see all</a>
+                </div>
+                <div class="friend-list">
+                    <div class="friend-card">
+                        <img src="./images/mythumbnail.jpg" alt="User">
+                        <h3>JC</h3>
+                        <p>4 mutual friends</p>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                    <div class="friend-card">
+                        <img src="./images/remetio.jpeg" alt="User">
+                        <h3>Lin Tech</h3>
+                        <p>3 mutual friends</p>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                    <div class="friend-card">
+                        <img src="./images/jayzel.jpeg" alt="User">
+                        <h3>Jeysel</h3>
+                        <p>5 mutual friends</p>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Suggestions Section -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>Suggestions</h2>
+                    <a href="#">see all</a>
+                </div>
+                <div class="friend-list">
+                    <div class="friend-card">
+                        <img src="./images/ff7.jpg" alt="User">
+                        <h3>Zumi</h3>
+                        <p>4 mutual friends</p>
+                        <button>Add</button>
+                        <button class="delete-btn">Remove</button>
+                    </div>
+                    <div class="friend-card">
+                        <img src="./images/ff8.jpg" alt="User">
+                        <h3>Yosaff</h3>
+                        <p>2 mutual friends</p>
+                        <button>Add</button>
+                        <button class="delete-btn">Remove</button>
+                    </div>
+                    <div class="friend-card">
+                        <img src="./images/ff9.jpg" alt="User">
+                        <h3>Wency</h3>
+                        <p>1 mutual friend</p>
+                        <button>Add</button>
+                        <button class="delete-btn">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------------- Gallery Section-------------------- -->
+    <div id="galleryInfo" class="centerContainer" style="display:none;">
+        <div class="gallerydevider">
+            <h1 class="title">Gallery</h1>
+            <img class="more1" src="./images/more (1).png" alt="">
+        </div>
+        <div class="dividersss"></div>
+        
+        <div id="favorite" class="user-profile">
+            <img src="./images/saramwa.jpg" alt="User Profile">
+            <p>@Xachi Pogi</p>
+        </div>
+        <h1 class="title"><span>Favorite</span></h1>
+
+        <div class="profile-section">
+            <div class="gallery-row">
+                <div class="image"><img src="./images/1.jfif" alt="Photo 1"></div>
+                <div class="image"><img src="./images/2.jfif" alt="Photo 2"></div>
+                <div class="image"><img src="./images/3.jfif" alt="Photo 3"></div>
+                <div class="add-btn">+</div>
+            </div>
+        </div>
+
+        <div class="dividersss"></div>
+
+        <div class="photos-section">
+            <h2>Photos</h2>
+            <div class="gallery-row">
+                <div class="image"><img src="./images/4.jfif" alt="Photo 4"></div>
+                <div class="image"><img src="./images/5.jfif" alt="Photo 5"></div>
+                <div class="image"><img src="./images/6.jfif" alt="Photo 6"></div>
+                <div class="add-btn">+</div>
+            </div>
+        </div>
+
+        <div class="dividersss"></div>
+
+        <div class="save-section">
+            <h2>Save</h2>
+            <div class="gallery-row">
+                <div class="image"><img src="./images/7.jfif" alt="Saved 1"></div>
+                <div class="image"><img src="./images/8.jfif" alt="Saved 2"></div>
+                <div class="image"><img src="./images/9.jfif" alt="Saved 3"></div>
+                <div class="add-btn">+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="chat-container" id="chat-container" style="display: none;">
+    <div class="namecontainer">
+        <img src="./images/saramwa.jpg" alt="">
+        <h3>Xachi</h3>
+        <img class="iconmess" src="./images/phone-call.png" alt="">
+        <img class="iconmess" src="./images/zoom.png" alt="">
+        <img class="iconmess minimize" src="./images/remove.png" alt="Minimize" onclick="minimizeChat()"> <!-- Minimize button -->
+        <img class="iconmess close" src="./images/reject.png" alt="Close" onclick="closeChat()"> <!-- Close button -->
+    </div>
+    <div class="chat-box" id="chat-box">
+        <!-- Messages will appear here -->
+    </div>
+    <div class="input-box" id="input-box">
+        <input type="text" id="user-input" placeholder="Aa...">
+        <img class="send"  src="./images/send.png" onclick="sendMessage()">
+    </div>
+</div>
+
+<script src="./js/function.js"></script>
+
+    <script>
+        let currentProfile = 1;
+
+        // Function to display the current profile
+        function showProfile(profileNumber) {
+            const totalProfiles = 3;
+            for (let i = 1; i <= totalProfiles; i++) {
+                document.getElementById(`profile${i}`).style.display = 'none';
+            }
+            document.getElementById(`profile${profileNumber}`).style.display = 'block';
+        }
+
+        // Show next profile
+        function showNextProfile() {
+            currentProfile++;
+            if (currentProfile > 3) {
+                currentProfile = 1;
+            }
+            showProfile(currentProfile);
+        }
+
+        // Show previous profile
+        function showPrevProfile() {
+            currentProfile--;
+            if (currentProfile < 1) {
+                currentProfile = 3;
+            }
+            showProfile(currentProfile);
+        }
+
+        // Show the first profile by default
+        showProfile(currentProfile);
+    </script>
+
+<script>
+    const toggleButton = document.getElementById('themeToggle');
+const bodyElement = document.body;
+
+// Check if the user has a saved theme preference
+if (localStorage.getItem('theme') === 'dark') {
+bodyElement.classList.add('dark-mode');
+}
+
+toggleButton.addEventListener('click', () => {
+bodyElement.classList.toggle('dark-mode');
+
+// Save the user's theme preference
+if (bodyElement.classList.contains('dark-mode')) {
+localStorage.setItem('theme', 'dark');
+} else {
+localStorage.setItem('theme', 'light');
+}
+});
+
+</script>
+
+</body>
+</html>
+

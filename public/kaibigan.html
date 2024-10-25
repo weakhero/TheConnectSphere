@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Friends</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #e0e0e0;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            outline: none;
+        }
+        .sidebar img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .friend-list {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .friend-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .friend-item img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+        .friend-item .info {
+            flex-grow: 1;
+            margin-left: 15px;
+        }
+        .friend-item button {
+            background-color: #d3d3d3;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .friend-item button:hover {
+            background-color: #c0c0c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+            <ul>
+                <li><img src="account_profile.png" alt="profile"> User</li>
+                <li><img src="friends.png" alt="friends"> Friends (69 online)</li>
+                <li><img src="dating.png" alt="dating"> Dating</li>
+                <li><img src="messages.png" alt="messages"> Messages</li>
+                <li><img src="core_valuess.png" alt="core"> Core Memories</li>
+                <li><img src="about_us.png" alt="about"> About us</li>
+            </ul>
+
+            <h3>Friend Request</h3>
+            <ul>
+                <li><img src="account_profile.png" alt="friend request"> Gc Ni Badong </li>
+                <li><img src="account_profile.png" alt="friend request"> Bulkan GC </li>
+            </ul>
+
+            <h3>Contacts</h3>
+            <ul>
+                <li><img src="account_profile.png" alt="contact"> User</li>
+                <li><img src="account_profile.png" alt="contact"> User</li>
+                <li><img src="account_profile.png" alt="contact"> User</li>
+                <li><img src="account_profile.png" alt="contact"> User</li>
+                <li><img src="account_profile.png" alt="contact"> User</li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <h2>Find Friends</h2>
+            <div class="friend-list">
+                <div class="friend-item">
+                    <img src="account_profile.png" alt="User">
+                    <div class="info">
+                        <p>User</p>
+                        <p>25 mutual friends</p>
+                    </div>
+                    <button>Add</button>
+                    <button>Remove</button>
+                </div>
+                <div class="friend-item">
+                    <img src="account_profile.png" alt="User">
+                    <div class="info">
+                        <p>User</p>
+                        <p>15 mutual friends</p>
+                    </div>
+                    <button>Add</button>
+                    <button>Remove</button>
+                </div>
+                <div class="friend-item">
+                    <img src="account_profile.png" alt="User">
+                    <div class="info">
+                        <p>User</p>
+                        <p>10 mutual friends</p>
+                    </div>
+                    <button>Add</button>
+                    <button>Remove</button>
+                </div>
+                    <div class="friend-item">
+                    <img src="account_profile.png" alt="User">
+                    <div class="info">
+                        <p>User</p>
+                        <p>10 mutual friends</p>
+                    </div>
+                    <button>Add</button>
+                    <button>Remove</button>
+                </div>
+                    <div class="friend-item">
+                    <img src="account_profile.png" alt="User">
+                    <div class="info">
+                        <p>User</p>
+                        <p>10 mutual friends</p>
+                    </div>
+                    <button>Add</button>
+                    <button>Remove</button>
+                </div>
+                    <div class="friend-item">
+                    <img src="account_profile.png" alt="User">
+                    <div class="info">
+                        <p>User</p>
+                        <p>10 mutual friends</p>
+                    </div>
+                    <button>Add</button>
+                    <button>Remove</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
