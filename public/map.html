@@ -6,31 +6,28 @@
     <title>Leaflet Map Example</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
+        body{
+            background-image: url(./css/imagecss/polygons-geometric-blur-background-connected-dots-3840x2160-1740.jpg);
+        }
+        h1{
+            color: aliceblue;
+            margin: 10px;
+        }
         #map {
-            height: 100vh;
-            width: 100%;
+            height: 80vh;
+            width: 80%;
+            border-radius: 20px;
+            z-index: 100;
+            margin-left: 10%;
+            border: solid 1px black;
         }
     </style>
 </head>
 <body>
-    <h1>Leaflet Map Example</h1>
+    <h1> Connect Sphere Map</h1>
     <div id="map"></div>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-        // Initialize the map and set its view
-        const map = L.map('map').setView([15.120804721588291, 120.60191918297566], 13);
-// Coordinates for Manila, Philippines
-
-        // Add a tile layer (OpenStreetMap)
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        // Add a marker to the map at the given location
-        L.marker([15.120804721588291, 120.60191918297566]).addTo(map)
-            .bindPopup('Manila, Philippines')
-            .openPopup();
-    </script>
+    <script src="./js/map.js"></script>
 </body>
 </html>

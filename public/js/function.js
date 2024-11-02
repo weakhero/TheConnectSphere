@@ -239,5 +239,3 @@ function getBotResponse(input) {
 }
 
 
-
-//---------------mode light magic happens------
